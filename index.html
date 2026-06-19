@@ -7,156 +7,153 @@
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Consolas,monospace;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Consolas,monospace;
 }
 
 body{
-background:#000;
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-color:#00ff66;
+  background:#000;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  overflow-y:auto;
+  overflow-x:hidden;
+  color:#00ff66;
+  padding:40px 15px 260px;
 }
 
 /* Matrix Background */
 body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-repeating-linear-gradient(
-0deg,
-rgba(0,255,100,.03),
-rgba(0,255,100,.03) 1px,
-transparent 1px,
-transparent 4px
-);
-animation:scan 5s linear infinite;
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+  repeating-linear-gradient(
+    0deg,
+    rgba(0,255,100,.03),
+    rgba(0,255,100,.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  animation:scan 5s linear infinite;
+  pointer-events:none;
 }
 
 @keyframes scan{
-from{transform:translateY(-100px);}
-to{transform:translateY(100px);}
+  from{transform:translateY(-100px);}
+  to{transform:translateY(100px);}
 }
 
 /* Glow */
 .glow{
-position:fixed;
-width:700px;
-height:700px;
-background:
-radial-gradient(circle,
-rgba(0,255,100,.15),
-transparent 70%);
-filter:blur(40px);
-animation:moveGlow 8s ease-in-out infinite alternate;
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,rgba(0,255,100,.15),transparent 70%);
+  filter:blur(40px);
+  animation:moveGlow 8s ease-in-out infinite alternate;
+  pointer-events:none;
 }
 
 @keyframes moveGlow{
-from{transform:translate(-180px,-80px);}
-to{transform:translate(180px,80px);}
+  from{transform:translate(-180px,-80px);}
+  to{transform:translate(180px,80px);}
 }
 
 /* Login Box */
 .loginBox{
-width:92%;
-max-width:470px;
-padding:28px;
-border-radius:25px;
-background:rgba(0,0,0,.85);
-border:1px solid #00ff66;
-backdrop-filter:blur(12px);
-box-shadow:
-0 0 20px rgba(0,255,100,.25),
-0 0 60px rgba(0,255,100,.15);
-position:relative;
-z-index:1;
+  width:92%;
+  max-width:470px;
+  padding:28px;
+  margin:40px auto;
+  border-radius:25px;
+  background:rgba(0,0,0,.85);
+  border:1px solid #00ff66;
+  backdrop-filter:blur(12px);
+  box-shadow:
+  0 0 20px rgba(0,255,100,.25),
+  0 0 60px rgba(0,255,100,.15);
+  position:relative;
+  z-index:1;
 }
 
-/* Header */
 .logo{
-text-align:center;
-font-size:42px;
-margin-bottom:10px;
-text-shadow:0 0 15px #00ff66;
+  text-align:center;
+  font-size:42px;
+  margin-bottom:10px;
+  text-shadow:0 0 15px #00ff66;
 }
 
 .title{
-text-align:center;
-font-size:28px;
-font-weight:bold;
-color:#00ff66;
-text-shadow:0 0 12px #00ff66;
-margin-bottom:8px;
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+  color:#00ff66;
+  text-shadow:0 0 12px #00ff66;
+  margin-bottom:8px;
 }
 
 .sub{
-text-align:center;
-color:#9dffbf;
-font-size:13px;
-margin-bottom:20px;
+  text-align:center;
+  color:#9dffbf;
+  font-size:13px;
+  margin-bottom:20px;
 }
 
-/* Status */
 .status{
-padding:12px;
-border-radius:14px;
-background:rgba(0,255,100,.05);
-border:1px solid rgba(0,255,100,.15);
-margin-bottom:18px;
-line-height:1.8;
-font-size:13px;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(0,255,100,.05);
+  border:1px solid rgba(0,255,100,.15);
+  margin-bottom:18px;
+  line-height:1.8;
+  font-size:13px;
 }
 
-/* Inputs */
 input{
-width:100%;
-padding:14px;
-margin-top:12px;
-border-radius:12px;
-border:1px solid rgba(0,255,100,.25);
-background:#010101;
-outline:none;
-color:#00ff66;
-font-size:15px;
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border-radius:12px;
+  border:1px solid rgba(0,255,100,.25);
+  background:#010101;
+  outline:none;
+  color:#00ff66;
+  font-size:15px;
 }
 
 input::placeholder{
-color:#4ade80;
+  color:#4ade80;
 }
 
-/* Button */
 button{
-width:100%;
-padding:15px;
-margin-top:16px;
-border:none;
-border-radius:14px;
-cursor:pointer;
-font-size:16px;
-font-weight:bold;
-background:linear-gradient(135deg,#00ff66,#00cc55);
-color:#000;
-box-shadow:0 0 15px rgba(0,255,100,.4);
-transition:.3s;
+  width:100%;
+  padding:15px;
+  margin-top:16px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+  background:linear-gradient(135deg,#00ff66,#00cc55);
+  color:#000;
+  box-shadow:0 0 15px rgba(0,255,100,.4);
+  transition:.3s;
 }
 
 button:hover{
-transform:translateY(-2px);
+  transform:translateY(-2px);
 }
 
-/* Footer */
 .footer{
-text-align:center;
-margin-top:18px;
-font-size:12px;
-color:#7dffae;
-letter-spacing:1px;
+  text-align:center;
+  margin-top:18px;
+  font-size:12px;
+  color:#7dffae;
+  letter-spacing:1px;
 }
 </style>
 </head>
@@ -167,40 +164,34 @@ letter-spacing:1px;
 
 <div class="loginBox">
 
-<div class="logo">🛡</div>
+  <div class="logo">🛡</div>
 
-<div class="title">
-ADMIN SECURITY LOGIN
-</div>
+  <div class="title">ADMIN SECURITY LOGIN</div>
 
-<div class="sub">
-ENCRYPTED ACCESS TERMINAL
-</div>
+  <div class="sub">ENCRYPTED ACCESS TERMINAL</div>
 
-<div class="status">
-🟢 FIREWALL : ENABLED<br>
-🟢 SYSTEM STATUS : ONLINE<br>
-🟢 SECURITY LEVEL : MAXIMUM<br>
-🟢 MULTI LAYER PROTECTION ACTIVE
-</div>
+  <div class="status">
+    🟢 FIREWALL : ENABLED<br>
+    🟢 SYSTEM STATUS : ONLINE<br>
+    🟢 SECURITY LEVEL : MAXIMUM<br>
+    🟢 MULTI LAYER PROTECTION ACTIVE
+  </div>
 
-<input type="text" placeholder="Login ID">
+  <input type="text" placeholder="Login ID">
 
-<input type="password" placeholder="Password">
+  <input type="password" placeholder="Password">
 
-<input type="text" placeholder="2FA Code">
+  <input type="text" placeholder="2FA Code">
 
-<input type="password" placeholder="PIN Code">
+  <input type="password" placeholder="PIN Code">
 
-<input type="text" placeholder="One Time OTP">
+  <input type="text" placeholder="One Time OTP">
 
-<button>
-LOGIN NOW
-</button>
+  <button>LOGIN NOW</button>
 
-<div class="footer">
-SECURE ADMIN ACCESS • TRENDING ACADEMY LIMITED
-</div>
+  <div class="footer">
+    SECURE ADMIN ACCESS • TRENDING ACADEMY LIMITED
+  </div>
 
 </div>
 
